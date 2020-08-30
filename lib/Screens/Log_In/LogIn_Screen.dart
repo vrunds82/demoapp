@@ -4,6 +4,7 @@ import 'package:demoapp/Screens/Global/Global_Screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:dotted_border/dotted_border.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 
 class LoginPge extends StatefulWidget {
@@ -13,7 +14,7 @@ class LoginPge extends StatefulWidget {
 
 class _LoginPgeState extends State<LoginPge> {
 
-  showAlertDialog(BuildContext context) {
+  /*showAlertDialog(BuildContext context) {
     // set up the button
     Widget okButton = FlatButton(
       child: Text("OK"),
@@ -41,7 +42,7 @@ class _LoginPgeState extends State<LoginPge> {
         return alert;
       },
     );
-  }
+  }*/
 
   @override
   Widget build(BuildContext context) {
@@ -74,7 +75,17 @@ class _LoginPgeState extends State<LoginPge> {
               SizedBox(height: 20,),
               CustomRaisedbutton(title: "Login",bgcolor: blueColor,textclr: whiteColor,
               click: (){
-                showAlertDialog(context);
+
+    Fluttertoast.showToast(
+    msg: "Incorrect Username/Password",
+    toastLength: Toast.LENGTH_SHORT,
+    gravity: ToastGravity.CENTER,
+    backgroundColor: redColor,
+    textColor: Colors.white,
+    fontSize: 16.0
+    );
+
+
               },),
               SizedBox(height: 20,),
               Padding(
@@ -100,6 +111,18 @@ class _LoginPgeState extends State<LoginPge> {
                     ],
                   ),
                 ),
+              ),
+              SizedBox(height: 26,),
+              Row(crossAxisAlignment: CrossAxisAlignment.end,
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: RaisedButton(child: Text("Next"),onPressed: (){
+                      Navigator.of(context).pushNamed('nextpage');
+                    },),
+                  ),
+                ],
               )
             ],
           ),

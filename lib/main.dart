@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+
 import 'Screens/Log_In/LogIn_Screen.dart';
 import 'Screens/Post_Login/PostLogin.dart';
 
@@ -15,9 +16,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(debugShowCheckedModeBanner: false,
       title: 'DemoApp',
 
-      home: Postloginscreen(),
+      home: LoginPge(),
       routes: {
 
+      'nextpage':(context)=>Postloginscreen(),
       },
     );
   }
