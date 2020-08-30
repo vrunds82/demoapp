@@ -26,6 +26,7 @@ class _PostloginscreenState extends State<Postloginscreen> {
             textColor: Colors.white,
             fontSize: 16.0
         );
+
       },
         child: Container(color: Colors.transparent,
           child: Padding(
